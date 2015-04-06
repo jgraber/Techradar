@@ -1,5 +1,5 @@
 //This is the title for your window tab, and your Radar
-document.title = "Johnny's Technology Radar";
+document.title = "WotifGroup's Technology Radar (December 2014)";
 
 
 //This is the concentic circles that want on your radar
@@ -27,7 +27,7 @@ var radar_arcs = [
 // StringValue : This is optional, If you add it then your blips will be clickable to some URL
 //
 // pc: polar coordinates
-//   r = distance away from origin ("radial coordinate")
+//     r = distance away from origin ("radial coordinate")
 //     - Each level is 100 points away from origin
 //     t = angle of the point from origin ("angular coordinate")
 //     - 0 degrees is due east
@@ -45,112 +45,157 @@ var radar_arcs = [
 // - Hold: things that are getting attention in the industry, but not ready for use; sometimes they are not mature enough yet, sometimes they are irredeemably flawed
 //      Note: there's no "avoid" ring, but throw things in the hold ring that people shouldn't use.
 
-var h = 800;
+var h = 1000;
 var w = 1200;
 
 var radar_data = [
     { "quadrant": "Techniques",
         "left" : 45,
-        "top" : 20,
+        "top" : 18,
         "color" : "#8FA227",
         "items" : [ 
-        	{"name":"Refactoring", "pc":{"r":15,"t":145},"movement":"t"},
-        	{"name":"TDD", "pc":{"r":35,"t":120},"movement":"t"}, 
-			{"name":"Continuous Integration", "pc":{"r":50,"t":145},"movement":"t"},    
-            {"name":"Kanban", "pc":{"r":75,"t":110},"movement":"t"},
-            {"name":"DDD", "pc":{"r":80,"t":170},"movement":"t"}, 
+            { name: 'Git flow / Pull Requests ^', pc: { r: 230, t: 133 }, movement: 'c' },
+            {"name":"Incremental data warehousing", "pc":{"r":250,"t":165},"movement":"c"},    
+            {"name":"Events for messages - CQRS", "pc":{"r":225,"t":120},"movement":"c"},
+            {"name":"Measure Pipeline disruptions", "pc":{"r":280,"t":110},"movement":"c"}, 
+            {"name":"Continuous Experimentation", "pc":{"r":230,"t":110},"movement":"c"},
+            { name: 'Reduce iRules dependence ^', pc: { r: 280, t: 133 }, movement: 'c' },
+            {"name":"SaaS for non-core systems", "pc":{"r":170,"t":150},"movement":"c"},   
+            {"name":"Pair Programming", "pc":{"r":130,"t":170},"movement":"c"}, 
+            {"name":"iOS Accessibility", "pc":{"r":170,"t":110},"movement":"c"},
+            {"name":"Single Page App", "pc":{"r":150,"t":95},"movement":"c", "url":"http://www.google.com"},
+            {"name":"iOS Adaptivity", "pc":{"r":180,"t":105},"movement":"c"},   
+            {"name":"Build Pipelines", "pc":{"r":180,"t":100},"movement":"c"},   
+            {"name":"Data Informed Decion Making", "pc":{"r":130,"t":110},"movement":"c"},
+            {"name":"Polygot Programming", "pc":{"r":180,"t":170},"movement":"c"},
+            { name: 'internal load balancing off F5^', pc: { r: 180, t: 133 }, movement: 'c' },
+            {"name":"Isolated dev envs", "pc":{"r":180,"t":125},"movement":"c"},  
+            {"name":"Edge Services", "pc":{"r":130,"t":160},"movement":"c"}, 
+            {"name":"Clean Code", "pc":{"r":130,"t":120},"movement":"c"},
+            {"name":"Wide and Thin Front-Ends", "pc":{"r":180,"t":160},"movement":"c"},
+            {"name":"Zookeeper for App Config", "pc":{"r":130,"t":130},"movement":"c"}, 
+            {"name":"Property based testing", "pc":{"r":130,"t":165},"movement":"c"},
+            {"name":"Evolutionary architecture", "pc":{"r":120,"t":95},"movement":"c"},
+            {"name":"Code Reviews", "pc":{"r":110,"t":110},"movement":"c"},
+            {"name":"Valuable, cheap tests", "pc":{"r":130,"t":150},"movement":"c"},
+            {"name":"Sacrificial Architecture", "pc":{"r":80,"t":100},"movement":"c"},   
+            {"name":"Sensible defaults", "pc":{"r":80,"t":150},"movement":"c"},   
+            {"name":"Dependency Injection", "pc":{"r":80,"t":130},"movement":"c"},   
+            {"name":"Coding architects", "pc":{"r":90,"t":170},"movement":"c"}
 
-			{"name":"Minimum Marketable Feature", "pc":{"r":115,"t":170},"movement":"t"},
-			{"name":"Outside in TDD", "pc":{"r":120,"t":160},"movement":"t"},
-			{"name":"Polygot Programming", "pc":{"r":125,"t":120},"movement":"t"},
-			{"name":"Impact Maps", "pc":{"r":155,"t":98},"movement":"t"},   
-            {"name":"Exploratory Testing", "pc":{"r":170,"t":135},"movement":"t"},
-            {"name":"Hexagonal Architecture", "pc":{"r":175,"t":155},"movement":"t"}, 
-            {"name":"Logs as Data", "pc":{"r":180,"t":175},"movement":"t"},         
-			
-            {"name":"Continuous Delivery", "pc":{"r":215,"t":100},"movement":"t", "url":"http://www.google.com"},
-            {"name":"Polygot Persistence", "pc":{"r":220,"t":115},"movement":"t"},    
-            {"name":"Simulation Testing", "pc":{"r":225,"t":125},"movement":"t"},   
-            {"name":"Business Event Tracking", "pc":{"r":240,"t":135},"movement":"t"},   
-            {"name":"Visualisation & Metrics", "pc":{"r":255,"t":170},"movement":"t"},   
-            {"name":"Story Maps", "pc":{"r":275,"t":145},"movement":"t"},   
-            
-            {"name":"Database Limitations in API", "pc":{"r":385,"t":135},"movement":"t"}            
         ]
     },
     { "quadrant": "Tools",
         "left": w-200+30,
-        "top" : 20,
+        "top" : 18,
         "color" : "#587486",
         "items" : [ 
-            {"name":"ReSharper", "pc":{"r":20,"t":20},"movement":"t"},   
-            {"name":"NuGet", "pc":{"r":40,"t":50},"movement":"t"},   
-            {"name":"Moq", "pc":{"r":50,"t":25},"movement":"t"},
-            {"name":"Git", "pc":{"r":70,"t":80},"movement":"t"},			
-            
-            {"name":"Miniprofiler", "pc":{"r":130,"t":50},"movement":"t"}, 
-            {"name":"Glimpse", "pc":{"r":150,"t":35},"movement":"t"}, 
-            {"name":"Nodatime", "pc":{"r":170,"t":20},"movement":"t"}, 
-            
-            {"name":"TeamPulse", "pc":{"r":220,"t":5},"movement":"t"},   
-            {"name":"MSpec", "pc":{"r":235,"t":25},"movement":"t"},   
-            {"name":"SpecFlow", "pc":{"r":240,"t":30},"movement":"t"},  
-            {"name":"NDepend", "pc":{"r":245,"t":40},"movement":"t"},  
-            {"name":"FakeIt Easy", "pc":{"r":250,"t":50},"movement":"t"},   
-            {"name":"Micro ORM", "pc":{"r":260,"t":60},"movement":"t"},   
-            {"name":"Puppet/Chef", "pc":{"r":270,"t":65},"movement":"t"},   
-            
-            {"name":"Subversion", "pc":{"r":330,"t":10},"movement":"t"},
-            {"name":"JMockit", "pc":{"r":360,"t":20},"movement":"t"},
-            {"name":"TFS (On-Premise)", "pc":{"r":380,"t":30},"movement":"t"}
-        ]
+
+{ name: 'Docker', pc: { r: 170, t: 19 }, movement: 't' },
+  { name: 'bind',    pc: { r: 150, t: 69 },    movement: 'c' },
+  { name: 'Appium',    pc: { r: 110, t: 70 },    movement: 'c',    domain: 'mobile, front-end' }, 
+ { name: 'Android Studio',    pc: { r: 180, t: 66 },    movement: 'c',    domain: 'mobile, dev' },
+  { name: 'Responsive Android',    pc: { r: 150, t: 14 },    movement: 'c' },
+  { name: 'AutoLayout - iOS',    pc: { r: 180, t: 55 },    movement: 'c',    domain: '' },
+  { name: 'Kiwi - iOS unit test',    pc: { r: 120, t: 14 },    movement: 'c',    domain: '' },
+  { name: 'BEM',    pc: { r: 160, t: 60 },    movement: 'c',    domain: 'front-end' },
+  { name: 'Crashlytics',    pc: { r: 180, t: 5 },    movement: 'c',    domain: 'mobile' },
+  { name: 'Consul',    pc: { r: 170, t: 29 },    movement: 't' }, 
+   { name: 'Swagger Code-Gen',    pc: { r: 180, t: 82 },    movement: 'c' },
+   { name: 'PowerMock ^',    pc: { r: 180, t: 46 },    movement: 'c' },
+   { name: 'Mockito',    pc: { r: 170, t: 84 },    movement: 'c',    domain: 'back-end' },
+   { name: 'Json Web Tokens (JWT)',    pc: { r: 180, t: 77 },    movement: 'c' },
+   { name: 'Lemming',    pc: { r: 160, t: 82 },    movement: 'c' },
+   { name: 'Hystrix',    pc: { r: 150, t: 36 },    movement: 'c' },
+  { name: 'Git',    pc: { r: 130, t: 73 },    movement: 'c' },
+
+  { name: 'Ansible',    pc: { r: 280, t: 74 },    movement: 'c' },  
+  { name: 'Hip Chat',    pc: { r: 280, t: 78 },    movement: 'c' },
+  { name: 'Trello',    pc: { r: 260, t: 75 },    movement: 'c' },
+  { name: 'Charles HTTP Proxy',    pc: { r: 260, t: 48 },    movement: 'c' },
+  { name: 'Xamarin', pc: { r: 280, t: 51 }, movement: 'c' },
+  { name: 'Android Annotations',    pc: { r: 280, t: 25 },    movement: 'c' },
+  { name: 'GenyMotion',    pc: { r: 210, t: 31 },    movement: 'c' },
+
+  { name: 'JDBI ^',    pc: { r: 80, t: 56 },    movement: 'c' },
+  { name: 'Kafka',    pc: { r: 12, t: 25 },    movement: 'c',    domain: 'back-end' },
+  { name: 'ELK',    pc: { r: 30, t: 72 },    movement: 'c',    domain: 'back-end' },
+  { name: 'Liquibase',    pc: { r: 80, t: 76 },    movement: 'c' },
+  { name: 'haproxy',    pc: { r: 80, t: 46 },    movement: 'c' },
+
+  { name: 'AppManager ^',    pc: { r: 360, t: 82 },    movement: 'c' },
+  { name: 'Hibernate ^',    pc: { r: 380, t: 56 },    movement: 'c' },
+  { name: 'mongoDB',    pc: { r: 330, t: 5 },    movement: 'c' }, 
+  { name: 'Subversion',    pc: { r: 330, t: 18 },    movement: 'c' }
+  ]
     },
-    { "quadrant": "Infrastructure",
+    { "quadrant": "Platforms",
         "left" :45,
-         "top" : (h/2 + 38),
+         "top" : (h/2 + 18),
         "color" : "#DC6F1D",
         "items" : [
-            {"name":"PostgreSQL", "pc":{"r":20,"t":230},"movement":"t"},   
-            {"name":"GitHub", "pc":{"r":60,"t":250},"movement":"t"},   
-            {"name":"SQL Server 2012", "pc":{"r":90,"t":230},"movement":"t"}, 
 
-			{"name":"RavenDB", "pc":{"r":115,"t":195},"movement":"t"},
-            {"name":"Code Climate", "pc":{"r":140,"t":225},"movement":"t"}, 
-            {"name":"SharePoint 2013", "pc":{"r":175,"t":255},"movement":"t"},
+            {"name":"OpenId Connect", "pc":{"r":130,"t":260},"movement":"t"},   
+            {"name":"Location based services", "pc":{"r":130,"t":230},"movement":"c"},
+            {"name":"Openstack", "pc":{"r":190,"t":190},"movement":"c"},
+            {"name":"RHEL 7", "pc":{"r":170,"t":215},"movement":"c"},      
 
-			{"name":"Mobile Devices", "pc":{"r":220,"t":225},"movement":"t"},
-            {"name":"Amazon Cloud", "pc":{"r":230,"t":200},"movement":"t"},   
-            {"name":"Travis CI", "pc":{"r":240,"t":185},"movement":"t"},  
-            {"name":"Azure", "pc":{"r":260,"t":255},"movement":"t"},                  
-            {"name":"TFS Online Services", "pc":{"r":280,"t":245},"movement":"t"}
+            {"name":"App containers", "pc":{"r":250,"t":260},"movement":"c"},
+            {"name":"Google Cloud Data Flow", "pc":{"r":275,"t":260},"movement":"t"},
+            { name: 'Postgres as NoSQL',              pc: { r: 220, t: 255 },              movement: 'c' },
+            {"name":"AWS 2014 Innovations", "pc":{"r":270,"t":195},"movement":"c"},
+            {"name":"Azure", "pc":{"r":290,"t":265},"movement":"c"},   
+            { name: 'Mesos',              pc: { r: 260, t: 265 },              movement: 't' },
+            { name: 'Marathon',              pc: { r: 240, t: 268 },              movement: 't' },
+            { name: 'Kubernetes',              pc: { r: 270, t: 236 },              movement: 't' },
+            {"name":"Google App Engine", "pc":{"r":290,"t":255},"movement":"c"},   
+            {"name":"Google as corporate platform", "pc":{"r":290,"t":200},"movement":"c"},   
+
+
+            {"name":"Google Play - (alpha/beta builds)", "pc":{"r":30,"t":225},"movement":"c"},
+            {"name":"JVM as platform", "pc":{"r":90,"t":265},"movement":"c"},   
+            {"name":"AWS", "pc":{"r":90,"t":250},"movement":"c"},   
+            { name: 'BigIP v11',              pc: { r: 50, t: 257 },              movement: 'c' },
+
+
+
+            {"name":"Ruby On Rails", "pc":{"r":390,"t":215},"movement":"c"},
+            {"name":"Everest", "pc":{"r":390,"t":185},"movement":"c"},   
+            {"name":"Magnolia CMS", "pc":{"r":390,"t":235},"movement":"c"},   
+            {"name":"Java EE - the Bad Parts", "pc":{"r":390,"t":245},"movement":"c"},   
+            {"name":"MS SqlServer", "pc":{"r":390,"t":190},"movement":"c"},
+            {"name":"RHEL 5", "pc":{"r":370,"t":195},"movement":"c"}
+
         ]
     },
     { "quadrant": "Languages & Frameworks",
         "color" : "#B70062",
         "left"  : (w-200+30),
-        "top" :   (h/2 + 38),
+        "top" :   (h/2 + 18),
         "items" : [ 
-            {"name":"C# 5", "pc":{"r":20,"t":295},"movement":"t"},
-            {"name":"Bootstrap", "pc":{"r":40,"t":315},"movement":"t"}, 
-            {"name":"Ruby 2", "pc":{"r":70,"t":345},"movement":"t"},  
-            {"name":"Rails 4", "pc":{"r":80,"t":350},"movement":"t"},
+            { name: 'CDI', pc: { r: 60, t: 290 },  movement: 'c' },
+            { name: 'Jersey', pc: { r: 60, t: 310 },  movement: 'c' },
 
-            {"name":"HTML 5", "pc":{"r":110,"t":320},"movement":"t"},   
-            {"name":"AngularJS", "pc":{"r":120,"t":310},"movement":"t"},   
-            {"name":"Jasmin", "pc":{"r":140,"t":305},"movement":"t"},   
-            {"name":"f() JavaScript", "pc":{"r":150,"t":320},"movement":"t"}, 
+            { name: 'Guice', pc: { r: 60, t: 278 },  movement: 'c' },
+            { name: 'RxJava', pc: { r: 150, t: 298 },              movement: 'c',  domain: 'template' },          
 
-            {"name":"OWIN", "pc":{"r":215,"t":350},"movement":"t"},   
-            {"name":"Nancy", "pc":{"r":225,"t":355},"movement":"t"},   
-            {"name":"RubyMotion", "pc":{"r":250,"t":280},"movement":"t"},   
-            {"name":"ASP.net MVC 5", "pc":{"r":270,"t":320},"movement":"t"},   
-            {"name":"ASP.net Web API", "pc":{"r":280,"t":330},"movement":"t"},
+            {"name":"Java 8", "pc":{"r":130,"t":355},"movement":"c"},   
+            {"name":"Groovy ^", "pc":{"r":190,"t":280},"movement":"c"},
 
-            {"name":"WPF", "pc":{"r":320,"t":282},"movement":"t"},
-            {"name":"ASP.net WebForms", "pc":{"r":330,"t":290},"movement":"t"},
-            {"name":"WinForms", "pc":{"r":360,"t":310},"movement":"t"},            
-            {"name":"Silverlight", "pc":{"r":370,"t":340},"movement":"t"},
-            {"name":"TypeScript", "pc":{"r":380,"t":350},"movement":"t"}
+            {"name":"Swift", "pc":{"r":280,"t":300},"movement":"c"},
+            {"name":"Scala - the good parts ^", "pc":{"r":290,"t":320},"movement":"c"},   
+            {"name":"Serverside Javascript", "pc":{"r":220,"t":275},"movement":"c"},   
+            {"name":"Coffeescript", "pc":{"r":270,"t":282},"movement":"c"},
+            {"name":"Functional Reactive Programming", "pc":{"r":285,"t":330},"movement":"c"},   
+            {"name":"Clojure", "pc":{"r":280,"t":310},"movement":"c"},
+            { name: 'RxJs',              pc: { r: 250, t: 338 },              movement: 'c',              domain: 'template' },
+            { name: 'Web Components', pc: { r: 260, t: 330 },  movement: 'c' },
+
+            { name: 'Mustache/Handlebars template',   pc: { r: 50, t: 298 },              movement: 'c',              domain: 'template' },
+            { name: 'Spring ^', pc: { r: 360, t: 330 },  movement: 'c' },
+            {"name":"Web Objects", "pc":{"r":390,"t":290},"movement":"c"},
+            {"name":"ASP Classic", "pc":{"r":375,"t":330},"movement":"c"},
+            {"name":"Java 6 and earlier", "pc":{"r":390,"t":350},"movement":"c"}
         ]
     }
 ];
