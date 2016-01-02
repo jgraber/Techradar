@@ -1,0 +1,60 @@
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">  
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script type="text/javascript" src="lib/protovis-3.2/protovis-d3.2.js"></script>
+<script type="text/javascript" charset="utf-8" src="utils.js"></script>
+<script type="text/javascript" charset="utf-8" src="lib/lodash.underscore.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="radars/radarData.js"></script>
+
+<style type="text/css" media="screen">
+  
+#fig {
+  height: 1000px;
+  width: 1200px;
+}
+
+</style>
+<script type="text/javascript" src="radar.js" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+$(document).ready(function () {
+    $("#radar").mousedown(function (e) {
+    	calculatePolarCoordinates(e.offsetX, e.offsetY);
+
+    });
+});
+
+function calculatePolarCoordinates(xMouse, yMouse) {
+        // Mouse coordinates in relation to center of graph
+        var x = (xMouse-600); //half of 1200 width
+        var y = (400-yMouse); //half of 800 height
+        //y: lower half of graphic should be negative, upper half positive
+
+        //  Pythagoras Theorem
+        // PQ = sqrt( (x2-x1)^2 + (y2-y1)^2 )
+        var radius = Math.sqrt(x*x + y*y);
+        var angle = Math.atan2(y, x) * 180 / Math.PI;
+ 		
+ 		// angle should be positive all the time
+        if (angle < 0) {
+    		angle = angle + 360;
+		}
+
+        // output: "pc":{"r":20,"t":145}
+        $("#coord").text('"pc":{"r":'+radius+',"t":'+angle+'}');
+}
+
+</script>
+
+</head>
+
+<body onload="init(h,w);">
+<h1 id="coord">Click for coordinates</h1>
+<div id="radar"></div>
+<div>
+<p>^ Item in dispute, additional discussion and context to be provided.</p>
+
+</div>
+</body>
+</html>
