@@ -1,5 +1,5 @@
 //This is the title for your window tab, and your Radar
-document.title = "Johnny's Technology Radar";
+document.title = "Johnny's Technology Radar 2017";
 
 
 //This is the concentic circles that want on your radar
@@ -54,23 +54,21 @@ var radar_data = [
         "top" : 20,
         "color" : "#8FA227",
         "items" : [ 
-        	{"name":"Refactoring", "pc":{"r":20,"t":145},"movement":"c"},
-        	{"name":"TDD", "pc":{"r":40,"t":120},"movement":"c"}, 
-			{"name":"Continuous Integration", "pc":{"r":50,"t":145},"movement":"c"},    
-            {"name":"Kanban", "pc":{"r":75,"t":110},"movement":"c"},
-            {"name":"DDD", "pc":{"r":80,"t":150},"movement":"c"},   
-            {"name":"Exploratory Testing", "pc":{"r":80,"t":130},"movement":"t"}, 
-            {"name":"Structured Logging ^", "pc":{"r":85,"t":170},"movement":"t"},
+        	{"name":"Refactoring", "pc":{"r":22,"t":135},"movement":"c"},
+        	{"name":"TDD", "pc":{"r":42,"t":157},"movement":"c"}, 
+			{"name":"Kanban", "pc":{"r":42,"t":122},"movement":"c"},
+            {"name":"Exploratory Testing", "pc":{"r":60,"t":110},"movement":"c"}, 
+            {"name":"Structured Logging", "pc":{"r":60,"t":140},"movement":"t"},
 
-			{"name":"Minimum Marketable Feature", "pc":{"r":115,"t":170},"movement":"c"},
-			{"name":"Outside in TDD", "pc":{"r":120,"t":160},"movement":"c"},
-			{"name":"Polygot Programming", "pc":{"r":125,"t":120},"movement":"c"},
-			{"name":"Continuous Delivery", "pc":{"r":155,"t":100},"movement":"c", "url":"http://www.google.com"},
-            {"name":"Hexagonal Architecture", "pc":{"r":175,"t":155},"movement":"c"}, 
-                     
-			{"name":"Visualisation & Metrics", "pc":{"r":220,"t":100},"movement":"c"},
-            {"name":"Impact Maps", "pc":{"r":240,"t":135},"movement":"c"},    
-            {"name":"Polygot Persistence", "pc":{"r":275,"t":170},"movement":"c"}            
+			{"name":"Outside in TDD", "pc":{"r":115,"t":160},"movement":"c"},
+			{"name":"Continuous Delivery", "pc":{"r":123,"t":120},"movement":"c"},             
+            {"name":"Visualisation & Metrics", "pc":{"r":118,"t":140},"movement":"t"},
+            {"name":"Impact Maps", "pc":{"r":160,"t":153},"movement":"t"},    
+            {"name":"Hexagonal Architecture", "pc":{"r":165,"t":116},"movement":"c"},            
+            
+            {"name":"Data Lake", "pc":{"r":220,"t":170},"movement":"t"},
+            {"name":"Living Documentation", "pc":{"r":246,"t":140},"movement":"t"}, 
+            {"name":"Polygot Persistence", "pc":{"r":281,"t":96},"movement":"c"}                      
         ]
     },
     { "quadrant": "Tools",
@@ -78,25 +76,25 @@ var radar_data = [
         "top" : 20,
         "color" : "#587486",
         "items" : [ 
-            {"name":"ReSharper", "pc":{"r":20,"t":35},"movement":"c"},   
-            {"name":"NuGet", "pc":{"r":40,"t":50},"movement":"c"},   
-            {"name":"Moq", "pc":{"r":50,"t":25},"movement":"c"},
-            {"name":"Git", "pc":{"r":70,"t":80},"movement":"c"},
-            {"name":"Balsamiq Mockup ^", "pc":{"r":80,"t":60},"movement":"t"},
-            {"name":"Octopus Deploy ^", "pc":{"r":90,"t":40},"movement":"t"},			
-            
-            {"name":"Serilog ^", "pc":{"r":120,"t":10},"movement":"t"},
+            {"name":"ReSharper", "pc":{"r":18,"t":50},"movement":"c"},   
+            {"name":"Moq", "pc":{"r":38,"t":25},"movement":"c"},
+            {"name":"Git", "pc":{"r":45,"t":50},"movement":"c"},
+            {"name":"DbUp", "pc":{"r":53,"t":75},"movement":"t"},
+            {"name":"Octopus Deploy", "pc":{"r":60,"t":17},"movement":"c"},		
+            {"name":"Serilog ^", "pc":{"r":73,"t":37},"movement":"t"},
+            {"name":"Seq ^", "pc":{"r":83,"t":22},"movement":"t"},
+            {"name":"Dapper ^", "pc":{"r":78,"t":63},"movement":"t"}, 
+            {"name":"SpecFlow", "pc":{"r":85,"t":79},"movement":"t"},
+
             {"name":"Miniprofiler", "pc":{"r":130,"t":70},"movement":"c"}, 
-            {"name":"Glimpse", "pc":{"r":150,"t":50},"movement":"c"}, 
-            {"name":"Nodatime", "pc":{"r":170,"t":20},"movement":"c"},
-            {"name":"Micro ORM", "pc":{"r":180,"t":60},"movement":"t"}, 
+            {"name":"Humanizer", "pc":{"r":140,"t":45},"movement":"t"}, 
+            {"name":"Nodatime", "pc":{"r":170,"t":20},"movement":"c"},            
              
-            {"name":"Entity Framework 7 ^", "pc":{"r":220,"t":10},"movement":"c"}, 
-            {"name":"SpecFlow", "pc":{"r":260,"t":30},"movement":"c"},    
-            {"name":"Puppet/Chef", "pc":{"r":280,"t":65},"movement":"c"},   
-            
-            {"name":"Subversion", "pc":{"r":330,"t":10},"movement":"c"},
-            {"name":"TFS (On-Premise)", "pc":{"r":380,"t":30},"movement":"c"}
+			{"name":"Puppet/Chef", "pc":{"r":243,"t":35},"movement":"c"},            
+             
+            {"name":"Entity Framework 7 ^", "pc":{"r":319,"t":10},"movement":"t"},
+            {"name":"Subversion", "pc":{"r":340,"t":45},"movement":"c"},
+            {"name":"TFS (On-Premise)", "pc":{"r":365,"t":76},"movement":"c"}
         ]
     },
     { "quadrant": "Infrastructure",
@@ -104,21 +102,22 @@ var radar_data = [
          "top" : (h/2 + 38),
         "color" : "#DC6F1D",
         "items" : [
-            {"name":"PostgreSQL", "pc":{"r":20,"t":230},"movement":"c"},   
-            {"name":"GitHub", "pc":{"r":60,"t":250},"movement":"c"},   
-            {"name":"RavenDB", "pc":{"r":85,"t":195},"movement":"t"},
+            {"name":"PostgreSQL", "pc":{"r":20,"t":220},"movement":"c"},   
+            {"name":"GitHub", "pc":{"r":50,"t":200},"movement":"c"}, 
+			{"name":"Visual Studio Team Services", "pc":{"r":53,"t":230},"movement":"t"},  
+            {"name":"RavenDB", "pc":{"r":85,"t":248},"movement":"c"},
 
-            {"name":"SQL Server 2014", "pc":{"r":120,"t":200},"movement":"t"}, 			
-            {"name":"Code Climate", "pc":{"r":130,"t":220},"movement":"c"},
-            {"name":"Travis CI", "pc":{"r":160,"t":195},"movement":"t"},
-            {"name":"TFS Online Services", "pc":{"r":180,"t":235},"movement":"t"},
+            {"name":"SQL Server 2016", "pc":{"r":120,"t":200},"movement":"t"}, 			
+            {"name":"Code Climate", "pc":{"r":140,"t":220},"movement":"c"},
+            {"name":"Travis CI", "pc":{"r":160,"t":248},"movement":"c"},
 
 			{"name":"Mobile Devices", "pc":{"r":215,"t":190},"movement":"c"},
-            {"name":"SharePoint 2016 ^", "pc":{"r":220,"t":210},"movement":"t"},
-            {"name":"Amazon Cloud", "pc":{"r":230,"t":225},"movement":"c"},   
-            {"name":"Docker ^", "pc":{"r":250,"t":240},"movement":"t"},
-            {"name":"Azure", "pc":{"r":260,"t":255},"movement":"c"}                 
-            
+            {"name":"Amazon Cloud", "pc":{"r":240,"t":211},"movement":"c"},
+            {"name":"Azure", "pc":{"r":260,"t":238},"movement":"c"},
+            {"name":"Terraform ", "pc":{"r":269,"t":258},"movement":"t"},     
+
+			{"name":"Docker ^", "pc":{"r":320,"t":210},"movement":"t"},
+            {"name":"SharePoint 2016 ^", "pc":{"r":350,"t":240},"movement":"t"}
         ]
     },
     { "quadrant": "Lang. & Frameworks",
@@ -127,26 +126,22 @@ var radar_data = [
         "top" :   (h/2 + 38),
         "items" : [ 
             {"name":"Bootstrap", "pc":{"r":25,"t":315},"movement":"c"}, 
-            {"name":"Ruby 2", "pc":{"r":70,"t":325},"movement":"c"},  
-            {"name":"Rails 4", "pc":{"r":80,"t":350},"movement":"c"},
+			{"name":"C# 6", "pc":{"r":46,"t":287},"movement":"t"}, 
+			{"name":"HTML 5", "pc":{"r":77,"t":330},"movement":"c"},
 
-            {"name":"HTML 5", "pc":{"r":115,"t":280},"movement":"c"},
-            {"name":"OWIN", "pc":{"r":125,"t":300},"movement":"t"},   
-            {"name":"Nancy", "pc":{"r":135,"t":320},"movement":"t"}, 
-            {"name":"C# 6 ^", "pc":{"r":155,"t":340},"movement":"t"},   
-            {"name":"Jasmin", "pc":{"r":170,"t":355},"movement":"c"},   
-            {"name":"f() JavaScript", "pc":{"r":180,"t":290},"movement":"t"}, 
-
-            {"name":"ASP.net 5 (vNext) ^", "pc":{"r":230,"t":300},"movement":"t"},
-            {"name":"Swift ^", "pc":{"r":230,"t":320},"movement":"t"},
-            {"name":"Go Language ^", "pc":{"r":260,"t":340},"movement":"t"},
-            {"name":"AngularJS 2 ^", "pc":{"r":280,"t":350},"movement":"t"}, 
-
-            {"name":"TypeScript ^", "pc":{"r":320,"t":282},"movement":"c"},
-            {"name":"ASP.net WebForms", "pc":{"r":330,"t":290},"movement":"c"},
-            {"name":"WinForms", "pc":{"r":360,"t":310},"movement":"c"},            
-            {"name":"Silverlight", "pc":{"r":370,"t":340},"movement":"c"},
-            {"name":"WPF", "pc":{"r":380,"t":350},"movement":"c"}
+            {"name":"Ruby 2.4", "pc":{"r":120,"t":280},"movement":"c"},  
+            {"name":"Rails 5", "pc":{"r":130,"t":300},"movement":"c"},            
+            {"name":"OWIN", "pc":{"r":140,"t":315},"movement":"c"},   
+            {"name":"Nancy", "pc":{"r":150,"t":330},"movement":"c"}, 
+            {"name":"f() JavaScript", "pc":{"r":160,"t":340},"movement":"c"}, 
+            
+            {"name":"Swift", "pc":{"r":238,"t":295},"movement":"c"},
+            {"name":"React", "pc":{"r":260,"t":328},"movement":"t"},
+			
+			{"name":"ASP.net Core (vNext) ^", "pc":{"r":324,"t":278},"movement":"t"},
+            {"name":"AngularJS 2", "pc":{"r":360,"t":305},"movement":"t"}, 
+            {"name":"TypeScript", "pc":{"r":370,"t":310},"movement":"c"},
+            {"name":"ASP.net WebForms", "pc":{"r":374,"t":351},"movement":"c"}
         ]
     }
 ];
