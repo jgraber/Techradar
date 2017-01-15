@@ -1,5 +1,5 @@
 //This is the title for your window tab, and your Radar
-document.title = "Johnny's Technology Radar 2017";
+document.title = "Mein Technologieradar für 2017";
 
 
 //This is the concentic circles that want on your radar
@@ -68,6 +68,7 @@ var radar_data = [
             
             {"name":"Data Lake", "pc":{"r":220,"t":170},"movement":"t"},
             {"name":"Living Documentation", "pc":{"r":246,"t":140},"movement":"t"}, 
+            {"name":"Power BI", "pc":{"r":242,"t":115},"movement":"t"},
             {"name":"Polygot Persistence", "pc":{"r":281,"t":96},"movement":"c"}                      
         ]
     },
@@ -110,10 +111,10 @@ var radar_data = [
             {"name":"SQL Server 2016", "pc":{"r":120,"t":200},"movement":"t"}, 			
             {"name":"Code Climate", "pc":{"r":140,"t":220},"movement":"c"},
             {"name":"Travis CI", "pc":{"r":160,"t":248},"movement":"c"},
+			{"name":"Azure", "pc":{"r":182,"t":231},"movement":"t"},
 
 			{"name":"Mobile Devices", "pc":{"r":215,"t":190},"movement":"c"},
-            {"name":"Amazon Cloud", "pc":{"r":240,"t":211},"movement":"c"},
-            {"name":"Azure", "pc":{"r":260,"t":238},"movement":"c"},
+            {"name":"Amazon Cloud", "pc":{"r":240,"t":211},"movement":"c"},            
             {"name":"Terraform ", "pc":{"r":269,"t":258},"movement":"t"},     
 
 			{"name":"Docker ^", "pc":{"r":320,"t":210},"movement":"t"},
